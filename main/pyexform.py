@@ -187,3 +187,24 @@ def index(array: Union[Any, list, pd.Series], index: int) -> Any:
             raise IndexError("Index is out of the search range")
         return array[index]
 
+def countif(series: pd.DataFrame, condition: Any, column: str = None) -> int:
+    """
+    calculates the number of items in a list of values based on a condition
+    
+    params:
+            `series: A table of values`
+
+            `condition: A function that is asserted before the count is calculated`
+
+            `column: a string or integer indicating the name of the column to perform the operation on or the position of the items`
+    returns:
+            `An Integer indicating the number of items that meets a condition`
+    """
+    data = list(series[column].values)
+    count = 0
+    for _,item in enumerate(data):
+        if condition(item):
+            count += 1
+        else:
+            continue
+    return count
