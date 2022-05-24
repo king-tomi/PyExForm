@@ -19,7 +19,7 @@ def check_instance(x: Union[int,float]) -> bool:
     """checks if the parameter passed is an integer or float"""
     return isinstance(x,(int,float))
 
-def sumif(series: pd.DataFrame, condition: Any, order : int = 0, row_num: int = None, column: str = None) -> Union[int,float]:
+def sumif(series: Union[pd.DataFrame, list, pd.Series], condition: Any, order : int = 0, row_num: int = None, column: str = None) -> Union[int,float]:
     """
     calculates the sum of a list of values based on a condition
     

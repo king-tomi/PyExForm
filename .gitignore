@@ -3,3 +3,4 @@ include/
 share/
 lib/
 pyvenv.cfg
+tests/results.csv
